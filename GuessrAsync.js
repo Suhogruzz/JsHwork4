@@ -3,7 +3,7 @@ const { stdin:input, stdout:output } = require('node:process');
 const rl = readline.createInterface({input, output});
 const fs = require('fs');
 
-let randomNumber = Math.floor(Math.random() * 10);
+const randomNumber = Math.floor(Math.random() * 10);
 let counter = 1;
 
 async function getUserInput() {
@@ -21,38 +21,32 @@ async function guessANumber() {
     while(true) {
         let userInput = await getUserInput();
         let userGuess = +userInput;
-
         switch(true) {
             case isNaN(userGuess) || userGuess < 0 || userGuess > 9:
                 var msg = `Введено неправильное число или вообще не число`;
-                console.log(msg);
                 appendToFile(msg);
                 break;
             case userGuess === randomNumber:
                 var msg =`Вы угадали число ${randomNumber}! У вас ушло попыток: ${counter} `;
-                console.log(msg);
                 appendToFile(msg);
                 return;
             case userGuess > randomNumber:
-                var msg =`Больше... Попытка ${counter}`;
-                console.log(msg);
+                var msg =`Ваше число больше... Попытка ${counter}`;
                 appendToFile(msg);
                 counter++;
                 break
             case userGuess < randomNumber:
-                var msg =`Меньше... Попытка ${counter}`;
-                console.log(msg);
+                var msg =`Ваше число меньше... Попытка ${counter}`;
                 appendToFile(msg);
                 counter++;
                 break
         };
-        rl.pause();
-        guessANumber();
-    }
+    };
  };
 
-async function appendToFile(msg) {
-    await fs.promises.appendFile("./log", msg+'\r\n', {encoding: 'utf8'});
+function appendToFile(msg) {
+    console.log(msg);
+    fs.promises.appendFile("./log", msg+'\r\n', {encoding: 'utf8'});
 };
 
 guessANumber();

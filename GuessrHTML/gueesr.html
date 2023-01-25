@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>NumberGuessr</title>
+</head>
+<body>
+    <div id="bg-colors" class="background">
+        <main class="main-content">
+            <h1 class="title">Выбери число от 1 до 10</h1>
+            <div class="number-wrapper">
+                <div class="number-wrapper-description-container">
+                    <h2 class = "number-wrapper-description">Тяни число в стороны и нажми на нужное чтобы сделать выбор</h2>
+                </div>
+                <div class = "restart-button-container hidden">
+                    <button class = "restart-button" onclick="restartGame()">новая игра?</button>
+                </div>
+                <div class = "number-wrapper-number-container">
+                    <ul class = "number-list-container ">
+                        <li class = "number">
+                            <button class = "number-button" value="1">1</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="2">2</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="3">3</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="4">4</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="5">5</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="6">6</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="7">7</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="8">8</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="9">9</button>
+                        </li>
+                        <li class = "number">
+                            <button class = "number-button" value="10">10</button>
+                        </li>
+                    </ul>
+                </div>
+        </main>
+    </div>
+</body>
+<script src="./scroller.js"></script>
+<script src="./guessrlogic.js"></script>
+</html>
