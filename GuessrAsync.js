@@ -14,7 +14,7 @@ async function getUserInput() {
             return resolve(userInput);
         })
     })
-    return await promise;
+    return promise;
 };
 
 async function guessANumber() {
