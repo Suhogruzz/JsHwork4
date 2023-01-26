@@ -147,13 +147,15 @@ ul, li {
 }
 
 .number {
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 }
 
 .number-button {
+    align-content: center;
     height: 100%;
-    width: 40%;
+    width: 4em;
     padding: auto;
     font-family: 'Sofia Sans Extra Condensed', sans-serif;
     font-size: 40px;
